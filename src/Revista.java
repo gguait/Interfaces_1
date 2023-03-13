@@ -5,20 +5,25 @@ import java.util.ArrayList;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
 /**
  *
  * @author pabmar
  */
-public class Publicacion {
+public class Revista extends Publicacion{
+    private int numero;
 
-    protected int codigo, anoPublicacion;
-    protected String nombre;
-    ArrayList<Publicacion> lista;
+    public Revista(int numero, int codigo, int anoPublicacion, String nombre) {
+        super(codigo, anoPublicacion, nombre);
+        this.numero = numero;
+    }
 
-    public Publicacion(int codigo, int anoPublicacion, String nombre) {
-        this.codigo = codigo;
-        this.anoPublicacion = anoPublicacion;
-        this.nombre = nombre;
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
     public int getCodigo() {
@@ -47,7 +52,7 @@ public class Publicacion {
 
     @Override
     public String toString() {
-        return "Publicacion{" + "codigo=" + codigo + ", anoPublicacion=" + anoPublicacion + ", nombre=" + nombre + ", lista=" + lista + '}';
+        return super.toString()+" Revista{" + "numero=" + numero + '}'+"\n";
     }
-
+    
 }

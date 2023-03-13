@@ -5,20 +5,21 @@ import java.util.ArrayList;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
 /**
  *
  * @author pabmar
  */
-public class Publicacion {
+public class Libro extends Publicacion implements Prestable{
+    private boolean prestado = false;
 
-    protected int codigo, anoPublicacion;
-    protected String nombre;
-    ArrayList<Publicacion> lista;
+    public Libro(int codigo, int anoPublicacion, String nombre) {
+        super(codigo, anoPublicacion, nombre);
+        this.prestado = false;
+    }
 
-    public Publicacion(int codigo, int anoPublicacion, String nombre) {
-        this.codigo = codigo;
-        this.anoPublicacion = anoPublicacion;
-        this.nombre = nombre;
+    public void setPrestado(boolean prestado) {
+        this.prestado = prestado;
     }
 
     public int getCodigo() {
@@ -47,7 +48,17 @@ public class Publicacion {
 
     @Override
     public String toString() {
-        return "Publicacion{" + "codigo=" + codigo + ", anoPublicacion=" + anoPublicacion + ", nombre=" + nombre + ", lista=" + lista + '}';
+        return super.toString()+" Libro{" + "prestado=" + prestado + '}'+"\n";
     }
-
+    
+    public void prestar(){
+        
+    }
+    public void devolver(){
+        
+    }
+    public boolean prestado(){
+        return true;
+    }
+    
 }
