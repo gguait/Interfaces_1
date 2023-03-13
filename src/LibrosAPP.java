@@ -30,6 +30,7 @@ public class LibrosAPP {
         }
         return contador;
     }
+    
 
     public static void main(String[] args) {
 //        crear un arrayList de Publicaciones con 2 libros y 2 revistas, prestar uno
@@ -51,6 +52,8 @@ public class LibrosAPP {
         lista.add(libro2);
         lista.add(revista1);
         lista.add(revista2);
+        
+        libro2.prestar();
         
         System.out.println(cuentaPrestados(lista));
         System.out.println(publicacionesAnterioresA(lista, 2000));
